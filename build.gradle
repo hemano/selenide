@@ -7,6 +7,12 @@ plugins {
   id 'com.github.kt3k.coveralls' version '2.8.2'
 }
 
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+
 group = 'com.codeborne'
 archivesBaseName = 'selenide'
 version = '4.11.2'
@@ -26,3 +32,7 @@ apply from: 'gradle/tests.gradle'
 apply from: 'gradle/deploy.gradle'
 
 wrapper.gradleVersion = '4.7'
+
+dependencies {
+  implementation 'com.github.hemano:TestNGExtentsReport:f1699f1a79'
+}
