@@ -5,15 +5,14 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.testng.Reporter;
 
 import java.net.URL;
 import java.util.logging.Logger;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.captureJavascriptErrors;
-import static com.codeborne.selenide.WebDriverRunner.getAndCheckWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.isIE;
+import static com.codeborne.selenide.WebDriverRunner.*;
 import static com.codeborne.selenide.logevents.LogEvent.EventStatus.PASS;
 
 public class Navigator {
@@ -48,6 +47,9 @@ public class Navigator {
   }
 
   protected void navigateToAbsoluteUrl(String url, String domain, String login, String password) {
+
+    Reporter.log("Navigating to url: " + url);
+
     if (isIE() && !isLocalFile(url)) {
       url = makeUniqueUrlToAvoidIECaching(url, System.nanoTime());
     }
