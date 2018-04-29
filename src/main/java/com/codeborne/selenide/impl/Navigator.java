@@ -5,7 +5,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.testng.Reporter;
 
 import java.net.URL;
 import java.util.logging.Logger;
@@ -47,9 +46,6 @@ public class Navigator {
   }
 
   protected void navigateToAbsoluteUrl(String url, String domain, String login, String password) {
-
-    Reporter.log("Navigating to url: " + url);
-
     if (isIE() && !isLocalFile(url)) {
       url = makeUniqueUrlToAvoidIECaching(url, System.nanoTime());
     }
