@@ -1,7 +1,8 @@
 package com.codeborne.selenide;
 
-import java.util.logging.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.logging.Logger;
 
 import static com.codeborne.selenide.Configuration.AssertionMode.STRICT;
 import static com.codeborne.selenide.Configuration.FileDownloadMode.HTTPGET;
@@ -220,7 +221,9 @@ public class Configuration {
    * Default value: "build/reports/tests" (this is default for Gradle projects)
    */
   public static String reportsFolder = System.getProperty("selenide.reportsFolder",
-          System.getProperty("selenide.reports", "build/reports/tests"));
+          System.getProperty("selenide.reports", "target/build/reports/tests"));
+//  public static String reportsFolder = System.getProperty("selenide.reportsFolder",
+//          System.getProperty("selenide.reports", "build/reports/tests"));
 
   /**
    * Optional: URL of CI server where reports are published to.
