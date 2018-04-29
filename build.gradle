@@ -34,5 +34,5 @@ apply from: 'gradle/deploy.gradle'
 wrapper.gradleVersion = '4.7'
 
 dependencies {
-  implementation 'com.github.hemano:TestNGExtentsReport:f1699f1a79'
+  implementation 'com.github.hemano:TestNGExtentsReport:0f0592e'
 }
