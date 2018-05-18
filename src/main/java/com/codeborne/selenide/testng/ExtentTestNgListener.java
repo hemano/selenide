@@ -8,9 +8,9 @@ public class ExtentTestNgListener extends ExtentTestNgFormatter {
 
   public void onTestFailure(ITestResult iTestResult) {
 
+    //attach screenshot to ExtentReports
     try {
-      String filePath = Screenshots.getLastScreenshot().getAbsolutePath();
-
+      String filePath = Screenshots.getLastScreenshot().getCanonicalPath();
       ExtentTestNgFormatter.getInstance().addScreenCaptureFromPath(iTestResult, filePath);
     } catch (Exception e) {
       e.printStackTrace();
